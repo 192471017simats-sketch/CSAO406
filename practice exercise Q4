@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    char process[10][20];
+
+    printf("Enter number of processes: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        printf("Enter Process %d name: ", i + 1);
+        scanf("%s", process[i]);
+    }
+
+    printf("\n--- Scheduler Execution ---\n");
+
+    for(i = 0; i < n; i++) {
+        printf("Executing %s...\n", process[i]);
+        printf("%s Completed.\n\n", process[i]);
+    }
+
+    printf("All Processes Executed Successfully.\n");
+
+    return 0;
+}
