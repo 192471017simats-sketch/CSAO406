@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main() {
+    int fd;
+    char msg[] = "Hello World";
+    char buf[20];
+
+    fd = open("data.txt", O_CREAT | O_WRONLY, 0644);
+    write(fd, msg, sizeof(msg));
+    close(fd);
+
+    fd = open("data.txt", O_RDONLY);
+    read(fd, buf, sizeof(buf));
+    close(fd);
+
+    printf("Data: %s\n", buf);
+
+    return 0;
+}
