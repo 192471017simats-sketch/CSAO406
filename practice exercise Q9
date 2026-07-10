@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int buffer[5], front = 0, rear = -1, count = 0;
+    int item = 10;
+
+    // Producer
+    if (count < 5) {
+        rear++;
+        buffer[rear] = item;
+        count++;
+        printf("Produced: %d\n", item);
+    }
+
+    // Consumer
+    if (count > 0) {
+        printf("Consumed: %d\n", buffer[front]);
+        front++;
+        count--;
+    }
+
+    return 0;
+}
